@@ -1,0 +1,7 @@
+class MCZ16 {
+  public static void main (String[] args) {
+    float a = 1;            // 1
+    float b = 1L;           // 2
+    float c = 1F;           // 3
+   // float d = 1.0;          // 4
+}}

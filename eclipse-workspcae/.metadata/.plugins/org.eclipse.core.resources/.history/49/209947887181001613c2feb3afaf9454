@@ -1,0 +1,12 @@
+package com.linkedlist;
+
+public class List {
+
+	class Node{
+		private int data;
+		Node link;
+	}
+	
+	
+	
+}

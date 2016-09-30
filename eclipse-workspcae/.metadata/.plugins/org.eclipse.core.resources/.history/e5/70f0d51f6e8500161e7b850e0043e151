@@ -1,0 +1,41 @@
+package com.pc;
+
+public class Container {
+	
+	private int size;
+	
+	public Container() {
+		size = 0;
+	}
+	synchronized
+	public void put() throws InterruptedException
+	{
+		while(size == 1)
+		{
+			System.out.println("Producer waiting");
+			this.wait();
+		}
+		System.out.println("Producer producing product");
+		Thread.sleep(1000);
+		size = 1;
+		System.out.println("Product produced");
+		Thread.sleep(1000);
+		this.notify();
+	}
+	synchronized
+	public void get() throws InterruptedException
+	{
+		while(size == 1)
+		{
+			System.out.println("Consumer waiting");
+			this.wait();
+		}
+		System.out.println("Consumer consuming product");
+		Thread.sleep(1000);
+		size = 0;
+		System.out.println("Product consumed");
+		Thread.sleep(1000);
+		this.notify();
+	}
+
+}

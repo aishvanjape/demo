@@ -1,0 +1,10 @@
+package com.flp.ems.domain;
+
+public class Employee {
+	
+	
+	//Data Members
+	
+	private long Employee_Id;
+
+}

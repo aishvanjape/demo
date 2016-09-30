@@ -1,0 +1,21 @@
+package com.bank;
+
+public class Bank {
+
+	Account accounts[];
+	
+	public void showtotalbalance()
+	{
+		
+	}
+	public void createaccount(int id, Customer c)
+	{
+		Account a = new Account(c, id);
+	}
+	
+	public Customer createcustomer(int id, String name)
+	{
+		Customer c = new Customer(id, name);
+		return c;
+	}
+}

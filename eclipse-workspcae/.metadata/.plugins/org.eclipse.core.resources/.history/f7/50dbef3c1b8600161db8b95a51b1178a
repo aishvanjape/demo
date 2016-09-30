@@ -1,0 +1,34 @@
+package com.flp.ems.view;
+
+public class UserInteraction {
+
+	public UserInteraction() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	void AddEmployee()
+	{
+		
+	}
+	
+	void ModifyEmployee()
+	{
+		
+	}
+	
+	void RemoveEmployee()
+	{
+		
+	}
+	
+	void SearchEmployee()
+	{
+		
+	}
+	
+	void getAllEmployee()
+	{
+		
+	}
+	
+}

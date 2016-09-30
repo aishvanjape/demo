@@ -1,0 +1,10 @@
+class M {
+  public static void main (String[] args) {
+    // Insert code here.
+	  char a = 061;      
+	  char b = '\61';    
+	  char c = '\061';   
+	  char d = 0x0031;
+	  char e = '\u0031'; 
+	  System.out.print(""+a+b+c+d+e);
+}}

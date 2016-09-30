@@ -1,0 +1,16 @@
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Entry4 {
+
+	public static void main(String[] args) {
+		Map<Long, String> entries = new TreeMap<>();
+		entries.put(1234L, "ABC");
+		
+	}
+	
+	
+	
+	
+	
+}

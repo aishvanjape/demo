@@ -1,0 +1,18 @@
+package com.hrsystem;
+
+public class EmployeeId implements Comparable{
+int id;
+String suffix;
+public EmployeeId(int i, String s) {
+	id = i;
+	suffix = s;
+}
+@Override
+	public int compareTo(Object o) {
+		if((this.id-(EmployeeId)o.id)>0)
+		{
+			
+		}
+		return 0;
+	}
+}

@@ -1,0 +1,63 @@
+package com.flp.ems.view;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class UserInteraction {
+
+	
+	
+	void AddEmployee()
+	{
+		Scanner scanner = new Scanner(System.in);
+		String name,kin_id,email_id,phone_no,date_of_birth,date_of_joining;
+		String address,department_id,project_id,role_id;
+		HashMap<String, String> hashobject = new HashMap<String,String>();
+		
+		System.out.println("\nEnter Employee Details");
+		System.out.println("Name : ");
+		name = scanner.next();
+		hashobject.put("Name", name);
+		System.out.println("Kin_Id : ");
+		kin_id = scanner.next();
+		hashobject.put("Kin_Id", kin_id);
+		System.out.println("Email ID : ");
+		email_id = scanner.next();
+		hashobject.put(key, value);
+		System.out.println("Phone No : ");
+		phone_no = scanner.next();
+		System.out.println("Date Of Birth : ");
+		date_of_birth = scanner.next();
+		System.out.println("Date Of Joining : ");
+		date_of_joining = scanner.next();
+		System.out.println("Address : ");
+		address = scanner.next();
+		System.out.println("Department Id : ");
+		department_id = scanner.next();
+		System.out.println("Project Id : ");
+		project_id = scanner.next();
+		System.out.println("Role Id : ");
+		role_id = scanner.next();
+	}
+	
+	void ModifyEmployee()
+	{
+		
+	}
+	
+	void RemoveEmployee()
+	{
+		
+	}
+	
+	void SearchEmployee()
+	{
+		
+	}
+	
+	void getAllEmployee()
+	{
+		
+	}
+	
+}

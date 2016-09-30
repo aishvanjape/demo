@@ -1,0 +1,6 @@
+package com.bank;
+
+public class Teller implements Runnable{
+
+	
+}

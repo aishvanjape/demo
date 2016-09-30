@@ -1,0 +1,11 @@
+package com.flp.ems.util;
+
+public class Validate {
+
+	static public Date validate_Date(String date)
+	{
+		
+	}
+	
+	
+}

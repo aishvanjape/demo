@@ -1,0 +1,22 @@
+
+public class MySimpleThread extends Thread {
+
+	
+	
+	
+	@Override
+	public void run() {
+		for(int v=0;v<10;v++)
+		{
+			System.out.println("Inside run"+Thread.currentThread());
+		}
+		
+		try {
+			Thread.sleep(5);
+			//Thread t1 = new MySimpleThread();
+			//t1.start();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}

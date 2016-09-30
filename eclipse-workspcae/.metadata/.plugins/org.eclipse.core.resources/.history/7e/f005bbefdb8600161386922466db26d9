@@ -1,0 +1,13 @@
+
+public class Entry {
+	public static void main(String[] args) {
+		
+		//TODO LOAD AND REGISTER "JDBC DRIVER"
+		
+		String driver = "";
+		
+		//TODO GET DATABASE CONNECTION USING "JDBC URL"
+		
+		String url = "";
+	}
+}

@@ -1,0 +1,7 @@
+package com.simulationdemo;
+
+public class Person {
+
+	String name;
+	int age;
+}

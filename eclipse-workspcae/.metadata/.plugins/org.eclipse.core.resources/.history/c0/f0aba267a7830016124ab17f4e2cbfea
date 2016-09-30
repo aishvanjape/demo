@@ -1,0 +1,14 @@
+import java.util.TreeSet;
+
+import com.simulationdemo.Person;
+
+public class Entry2 {
+
+	public static void main(String[] args) {
+		Person p1 = new Person("abc",1);
+		
+		TreeSet t1 = new TreeSet();
+		t1.add(p1);
+		
+	}
+}

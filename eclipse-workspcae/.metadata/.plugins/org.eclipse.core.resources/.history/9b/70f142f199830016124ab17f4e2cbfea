@@ -1,0 +1,6 @@
+class M {
+  public static void main (String[] args) {
+    // Insert code here.
+	  String a = 'a';
+	  String b = 'abc';
+}}

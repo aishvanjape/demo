@@ -1,0 +1,11 @@
+package com.hrsystem;
+
+public class EmployeeId implemented Comparable{
+int id;
+String suffix;
+public EmployeeId(int i, String s) {
+	id = i;
+	suffix = s;
+}
+
+}

@@ -1,0 +1,12 @@
+package com.simulationdemo;
+
+public class Person {
+
+	String name;
+	int age;
+	public Person(String s,int a)
+	{
+		name = s;
+		age = a;
+	}
+}

@@ -1,0 +1,11 @@
+class M {
+  public static void main (String[] args) {
+    // Insert code here.
+	    String a1 = null;        // 1
+	    String b1 = 'null';      // 2
+	    String c1 = "null";      // 3
+	    String d1 = "'null'";    // 4
+
+
+
+}}

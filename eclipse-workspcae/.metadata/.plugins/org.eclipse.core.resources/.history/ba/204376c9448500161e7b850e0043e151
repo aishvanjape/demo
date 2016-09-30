@@ -1,0 +1,12 @@
+package com.bank;
+
+public class Teller implements Runnable{
+
+	@Override
+	public void run() {
+		
+		
+	}
+
+	
+}

@@ -1,0 +1,10 @@
+package com.hrsystem;
+
+import java.util.HashMap;
+
+public class HrSys2 {
+
+	public static void main(String[] args) {
+		HashMap<EmployeeId, Employee> hm =new HashMap();
+	}
+}

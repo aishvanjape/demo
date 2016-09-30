@@ -1,0 +1,40 @@
+package com.bank;
+
+public class Entry {
+
+	public static void main(String[] args) {
+		
+		Bank bank = new Bank();
+		
+		Customer c1 = bank.createcustomer(1, "ABC");
+		Customer c2 = bank.createcustomer(2, "XYZ");
+		Customer c3 = bank.createcustomer(3, "PQR");
+		bank.createaccount(0, c1);
+		bank.createaccount(1, c1);
+		bank.createaccount(2, c1);
+		bank.createaccount(3, c2);
+		bank.createaccount(4, c2);
+		bank.createaccount(5, c2);
+		bank.createaccount(6, c3);
+		bank.createaccount(7, c3);
+		
+		
+		
+		Runnable teller1 = new Teller(bank);
+		bank.showtotalbalance();
+		
+		Thread t1 = new Thread(teller1);
+		t1.start();
+		Thread t2 = new Thread(teller1);
+		t2.start();
+		Thread t3 = new Thread(teller1);
+		t3.start();
+		Thread t4 = new Thread(teller1);
+		t4.start();
+		Thread t5 = new Thread(teller1);
+		t5.start();
+		
+		Thread.sleep(50000);;
+		bank.showtotalbalance();
+	}
+}

@@ -1,0 +1,62 @@
+package com.linkedlist;
+
+public class List {
+
+	private Node head;
+	
+	public List() {
+		head = null;
+	}
+	
+	class Node{
+		private int data;
+		Node link;
+		public Node(int d) {
+			this.data = d;
+			this.link = null;
+		}
+	}
+	
+	public void addNode(int d)
+	{
+		
+		if(head == null)
+		{
+			head = new Node(d);
+		}
+		else{
+			Node temp;
+			temp = this.head;
+			while(temp != null)
+			{
+				temp = temp.link;
+			}
+			Node n = new Node(d);
+			temp = n;
+		}
+	}
+	
+	public void display()
+	{
+		Node temp;
+		temp = head;
+		while(temp != null)
+		{
+			System.out.println("Node : "+temp.data);
+			temp = temp.link;
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		List l;
+		l = new List();
+		l.addNode(1);
+		l.addNode(2);
+		l.addNode(3);
+		l.addNode(4);
+		l.display();
+		
+	}
+	
+}

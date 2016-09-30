@@ -1,0 +1,45 @@
+package com.flp.ems.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.flp.ems.domain.Employee;
+
+public class EmployeeDaoImplForList implements IEmployeeDao{
+	
+	ArrayList<Employee> employeelist = new ArrayList<Employee>();
+
+	@Override
+	public void AddEmployee(Employee e) {
+		
+		
+		HashMap<Employee, null> h = new HAshMap()<Employee, null>;
+		
+		employeelist.add(e);
+	}
+
+	@Override
+	public void ModifyEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void RemoveEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void SearchEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ArrayList<Employee> getAllEmployee() {
+		
+		return (ArrayList<Employee>)employeelist.clone();
+	}
+
+}

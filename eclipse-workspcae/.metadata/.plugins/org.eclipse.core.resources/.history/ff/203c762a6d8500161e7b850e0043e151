@@ -1,0 +1,21 @@
+package com.pc;
+
+public class Entry {
+	
+	public static void main(String[] args) {
+		
+		Container c = new Container();
+		Consumer cons = new Consumer(c);
+		Producer prod = new Producer(c);
+		Thread t1 = new Thread(cons);
+		Thread t2 = new Thread(prod);
+		
+		while(true)
+		{
+			t1.start();
+			t2.start();
+		}
+		
+	}
+
+}

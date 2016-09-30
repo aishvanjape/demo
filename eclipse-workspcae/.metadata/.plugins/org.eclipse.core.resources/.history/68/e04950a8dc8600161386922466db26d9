@@ -1,0 +1,26 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+public class Entry {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		//TODO LOAD AND REGISTER "JDBC DRIVER"
+		
+		String driver = "";
+		Class.forName(driver);
+		
+		
+		
+		//TODO GET DATABASE CONNECTION USING "JDBC URL"
+		
+		String url = "";
+		Connection dbConnection;
+		
+		dbConnection = DriverManager.getConnection(url);
+		
+		System.out.println("Connection successful?"+(dbConnection!=null));
+		
+		
+		
+	}
+}

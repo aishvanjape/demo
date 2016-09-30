@@ -1,0 +1,8 @@
+package com.hrsystem;
+
+public class HrSys2 {
+
+	public static void main(String[] args) {
+		
+	}
+}

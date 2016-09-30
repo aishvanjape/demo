@@ -1,0 +1,7 @@
+class M {
+  public static void main (String[] args) {
+    // Insert code here.
+	  char a = 061;      
+	  char b = '\61';    
+	  char c = '\061';   
+}}

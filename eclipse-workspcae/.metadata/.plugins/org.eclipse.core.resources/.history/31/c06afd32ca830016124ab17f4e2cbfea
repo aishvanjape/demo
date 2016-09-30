@@ -1,0 +1,14 @@
+import java.util.HashSet;
+
+public class Entry5 {
+
+	public static void main(String[] args) {
+		HashSet<Integer> values = new HashSet<>();
+		values.add(1);
+		values.add(2);
+		for(int v:values)
+		{
+			System.err.println(v);
+		}
+	}
+}

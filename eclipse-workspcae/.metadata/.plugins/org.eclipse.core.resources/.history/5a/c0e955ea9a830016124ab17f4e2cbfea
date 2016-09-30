@@ -1,0 +1,11 @@
+class M {
+  public static void main (String[] args) {
+    // Insert code here.
+	  char a = '\7';   // 1
+	    char b = '\61';  // 2
+	    char c = '\062'; // 3
+	    char d = '\x7';  // 4
+	    char e = '\x41'; // 5
+	    System.out.print(""+a+b+c+d+e);
+
+}}

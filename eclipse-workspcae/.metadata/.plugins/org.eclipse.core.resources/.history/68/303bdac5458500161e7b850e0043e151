@@ -1,0 +1,29 @@
+package com.bank;
+
+public class Account {
+
+	Customer c;
+	int id;
+	double balance;
+	
+	public Account(Customer c, int id) {
+		this.c = c;
+		this.id = id;
+		this.balance = 0;
+	}
+	
+	public boolean deposit(double amt)
+	{
+		double bal = this.balance;
+		bal = bal + amt;
+		this.balance = bal;
+		return true;
+	}
+	public boolean withdraw(double amt)
+	{
+		double bal = this.balance;
+		bal = bal - amt;
+		this.balance = bal;
+		return true;
+	}
+}

@@ -1,0 +1,78 @@
+package com.flp.ems.service;
+
+import java.text.ParseException;
+import java.util.Date;
+import java.util.HashMap;
+
+import com.flp.ems.dao.EmployeeDaoImplForList;
+import com.flp.ems.dao.IEmployeeDao;
+import com.flp.ems.domain.Employee;
+import com.flp.ems.util.Validate;
+
+public class EmployeeServiceImpl implements IEmployeeService{
+
+	private IEmployeeDao service_interface;
+	
+	public EmployeeServiceImpl() {
+		
+		service_interface = new EmployeeDaoImplForList();
+	}
+	
+	@Override
+	public void AddEmployee(HashMap<String, String> hashobject) {
+		
+		String name,kin_id,email_id,address;
+		long phone_no,department_id,project_id,role_id;
+		Date date_of_birth = null,date_of_joining = null;
+		
+		name = hashobject.get("Name");
+		kin_id = hashobject.get("Kin_Id");
+		email_id = hashobject.get("Email_Id");
+		address = hashobject.get("Address");
+		phone_no = Long.parseLong(hashobject.get("Phone_No"));
+		department_id = Long.parseLong(hashobject.get("Department_Id"));
+		project_id = Long.parseLong(hashobject.get("Project_Id"));
+		role_id = Long.parseLong(hashobject.get("Role_Id"));
+	
+		
+		
+		try {
+			date_of_birth = Validate.validate_Date(this.hashobject.get("Date_Of_Birth"));
+			date_of_joining = Validate.validate_Date(this.hashobject.get("Date_Of_Joining"));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Employee employee = new Employee(name, kin_id, email_id, phone_no, date_of_birth, date_of_joining, address, department_id, project_id, role_id);
+		service_interface.AddEmployee(employee);
+		
+		
+		
+	}
+
+	@Override
+	public void ModifyEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void RemoveEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void SearchEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getAllEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+class MCZ18 {
+  public static void main (String[] args) {
+    String a = "abcd";          // 1
+    String b = "'\u0041'";      // 2
+    String c = "\u0041";        // 3
+    String d = "\uD7AF";        // 4
+    char c1 = '\61';
+    char d1 = 0x7;
+    char e = 041; 
+    System.out.print(a+b+c+d+c1+e);  // 5
+}}

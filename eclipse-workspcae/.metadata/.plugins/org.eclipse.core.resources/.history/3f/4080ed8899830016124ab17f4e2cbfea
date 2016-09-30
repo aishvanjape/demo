@@ -1,0 +1,7 @@
+class M {
+  public static void main (String[] args) {
+    String a = "\n";      // 1
+    String b = "\r";      // 2
+    String c = "\u000a";  // 3  \u000a = new line
+    String d = "\u000d";  // 4  \u000d = return
+}}

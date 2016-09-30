@@ -1,0 +1,27 @@
+package com.bank;
+
+public class Teller implements Runnable{
+
+	Bank b;
+	public Teller(Bank bank) {
+		b = bank;
+	}
+	@Override
+	public void run() {
+		
+		int accto = (int)Math.random()%2;
+		int accfrom = (int)Math.random()%2;
+		b.showtotalbalance();
+		try {
+			if(b.transfer_amount(accfrom, accto, 200))
+			{
+				System.out.println("Transaction successful for accounts from "+accfrom+"to "+accto);
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+}

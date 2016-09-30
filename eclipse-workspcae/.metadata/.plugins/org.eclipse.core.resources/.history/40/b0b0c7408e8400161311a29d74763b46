@@ -1,0 +1,9 @@
+class GFC306 {
+  static int[] i1 = {1}, i2 = {3};
+  static void m1(int[] i1) {
+    int[] i3 = i1; i1 = i2; i2 = i3;
+  }
+  public static void main (String[] args) {
+    m1(i1);
+    System.out.print(i1[0] + "," + i2[0]);
+}}
