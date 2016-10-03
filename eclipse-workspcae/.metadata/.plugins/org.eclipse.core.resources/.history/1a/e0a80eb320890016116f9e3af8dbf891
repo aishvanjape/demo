@@ -1,0 +1,24 @@
+
+public class A implements Sample{
+
+	
+	@Override
+	public void hello() {
+		System.out.println("Hello in class");
+	}
+	
+	
+	public static void main(String[] args) {
+		Sample s = new A();
+		A a = new A();
+		s.hello();
+		a.hello();
+		
+	}
+
+	@Override
+	public void abc() {
+		// TODO Auto-generated method stub
+		
+	}
+}

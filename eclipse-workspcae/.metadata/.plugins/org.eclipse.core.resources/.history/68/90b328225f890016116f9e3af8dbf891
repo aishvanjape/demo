@@ -1,0 +1,19 @@
+package com.stream;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MyService {
+
+	
+	public static void main(String[] args) throws IOException {
+		int port = 80;
+		
+		ServerSocket service = new ServerSocket(port);
+		
+		Socket clientinfo = service.accept();
+		System.out.println("Waiting for connection");
+	}
+	
+}

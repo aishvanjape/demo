@@ -1,0 +1,17 @@
+package com.stream;
+
+public class IOutils {
+
+	
+	public void writePrimitives()
+	{
+		
+	}
+	
+	
+	public void readPrimitives()
+	{
+		
+	}
+	
+}

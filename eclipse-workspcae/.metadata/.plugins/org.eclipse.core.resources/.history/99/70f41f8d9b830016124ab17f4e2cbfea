@@ -1,8 +1,0 @@
-class M {
-  public static void main (String[] args) {
-    // Insert code here.
-	  char a = 0x0041;
-
-
-
-}}

@@ -1,8 +1,0 @@
-import java.util.Map;
-
-public class Entry4 {
-
-	Map <Long, String> entries = new TreeMap();
-	
-	
-}

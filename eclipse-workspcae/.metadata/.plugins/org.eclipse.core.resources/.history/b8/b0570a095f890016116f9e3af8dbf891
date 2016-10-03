@@ -1,0 +1,14 @@
+package com.stream;
+
+import java.net.ServerSocket;
+
+public class MyService {
+
+	
+	public static void main(String[] args) {
+		int port = 80;
+		
+		ServerSocket service = new ServerSocket(port);
+	}
+	
+}

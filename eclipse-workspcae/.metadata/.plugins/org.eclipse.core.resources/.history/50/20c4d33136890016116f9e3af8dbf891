@@ -1,0 +1,26 @@
+package com.stream;
+
+import java.io.DataOutputStream;
+import java.io.OutputStream;
+
+public class IOutils {
+
+	
+	public void writePrimitives(OutputStream out)
+	{
+		//TODO Write a long,double and boolean
+		
+		try(DataOutputStream dOut = new DataOutputStream(out))
+		{
+			
+		}
+		
+	}
+	
+	
+	public void readPrimitives()
+	{
+		
+	}
+	
+}

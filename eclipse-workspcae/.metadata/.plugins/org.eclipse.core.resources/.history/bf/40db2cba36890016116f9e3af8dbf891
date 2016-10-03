@@ -1,0 +1,40 @@
+package com.stream;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+public class IOutils {
+
+	
+	public void writePrimitives(OutputStream out) throws IOException
+	{
+		//TODO Write a long,double and boolean
+		
+		try(DataOutputStream dOut = new DataOutputStream(out))
+		{
+			dOut.writeLong(1L);
+			dOut.writeDouble(12.34);
+			dOut.writeBoolean(false);
+		}
+		
+	}
+	
+	
+	public void readPrimitives(InputStream in) throws IOException
+	{
+		
+		try(DataInputStream dIn = new DataInputStream(in))
+		{
+			System.out.println(long value = dIn.readLong());
+			dIn.readDouble();
+			dIn.readBoolean();
+		}
+		
+		
+		
+	}
+	
+}

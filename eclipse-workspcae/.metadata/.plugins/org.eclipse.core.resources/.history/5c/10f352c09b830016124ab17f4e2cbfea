@@ -1,9 +1,0 @@
-class M {
-  public static void main (String[] args) {
-    // Insert code here.
-	  char a = 0x0041;
-	  char b = '\u0041';
-	  char c = 0101;
-	  char d = -1;
-	  char e = (char)-1;
-}}

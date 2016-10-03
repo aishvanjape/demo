@@ -1,6 +1,0 @@
-package com.hrsystem;
-
-public class EmployeeId {
-int id;
-String suffix;
-}

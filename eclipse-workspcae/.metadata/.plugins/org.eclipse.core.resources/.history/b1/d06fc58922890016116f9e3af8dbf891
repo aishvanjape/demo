@@ -1,0 +1,8 @@
+
+public interface MathOperations{
+	int operations(int,int);
+}
+
+public class LambdaExpression {
+
+}

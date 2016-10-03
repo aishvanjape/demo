@@ -1,0 +1,3 @@
+public abstract class Test implements Runnable{
+        public void doSomething() { };
+}

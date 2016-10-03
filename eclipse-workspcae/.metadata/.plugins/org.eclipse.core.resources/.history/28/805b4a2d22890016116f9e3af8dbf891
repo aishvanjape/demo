@@ -1,0 +1,17 @@
+
+public interface MathOperations {
+
+	int operations(int a, int b);
+}
+public class Lambda{
+	public static void main(String[] args) {
+		MathOperations m = new MathOperations() {
+			
+			@Override
+			public int operations(int a, int b) {
+				// TODO Auto-generated method stub
+				return a+b;
+			}
+		};
+	}
+}

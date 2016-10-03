@@ -1,8 +1,0 @@
-import com.simulationdemo.Person;
-
-public class Entry2 {
-
-	public static void main(String[] args) {
-		Person p1 = new Person("abc",1);
-	}
-}
