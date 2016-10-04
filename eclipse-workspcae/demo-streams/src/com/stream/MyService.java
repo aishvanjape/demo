@@ -15,11 +15,12 @@ public class MyService {
 
 	
 	public static void main(String[] args) throws IOException {
-		int port = 80;
+		int port = 5555;
 		
 		ServerSocket service = new ServerSocket(port);
 		System.out.println("Waiting for connection");
 		Socket clientinfo = service.accept();
+		
 		System.out.println(clientinfo);
 		
 		InputStream in = clientinfo.getInputStream();
@@ -27,10 +28,10 @@ public class MyService {
 		BufferedReader breader = new BufferedReader(bridge);
 		
 		OutputStream out = clientinfo.getOutputStream();
-		//OutputStreamWriter brid = new OutputStreamWriter(out);
-		//BufferedWriter br = new BufferedWriter(brid);
+		OutputStreamWriter brid = new OutputStreamWriter(out);
+		BufferedWriter br = new BufferedWriter(brid);
 		
-		PrintWriter p = new PrintWriter(out);
+		PrintWriter p = new PrintWriter(out,true);
 		
 //		while(true)
 //		{
@@ -43,12 +44,17 @@ public class MyService {
 //			System.out.println(line);
 //		}
 		String line;
-		while((line=breader.readLine())!= null)
+		while((line=breader.readLine()).length()!=0)
 		{
 			System.out.println(line);
 		}
-		p.println("Hello");
-		
+//		p.println("Hello....HI");
+		br.write("Hello..!!...");
+		//p.write("Hello World");
+//		p.close();
+		br.close();
+		clientinfo.close();
+		service.close();
 	}
 	
 }

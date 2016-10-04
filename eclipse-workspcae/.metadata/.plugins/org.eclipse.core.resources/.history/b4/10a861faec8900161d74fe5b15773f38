@@ -1,0 +1,56 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Server{
+	public static void main(String[] args) throws IOException {
+		int port= 5566;
+		ServerSocket server = new ServerSocket(port);
+		System.out.println("waiting for connection");
+		Socket client = server.accept();
+		myThread client1 = new myThread(client);
+		
+		client1.start();
+		
+		client.close();
+		server.close();
+	}
+
+	
+}
+
+class myThread extends Thread{
+
+	Socket client;
+	
+	public myThread(Socket c) {
+		client = c;
+	}
+	@Override
+	public void run() {
+		
+		try {
+			InputStream in = client.getInputStream();
+			InputStreamReader bridge = new InputStreamReader(in);
+			BufferedReader breader = new BufferedReader(bridge);
+			OutputStream out = client.getOutputStream();
+			PrintWriter p = new PrintWriter(out,true);
+			
+			System.out.println("From client"+breader.readLine());
+			p.write("Hi from server");
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+}

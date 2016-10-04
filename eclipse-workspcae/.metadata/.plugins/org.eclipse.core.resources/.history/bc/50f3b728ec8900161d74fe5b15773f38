@@ -1,0 +1,26 @@
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Server{
+	public static void main(String[] args) throws IOException {
+		int port= 5566;
+		ServerSocket server = new ServerSocket(port);
+		Socket client = server.accept();
+		
+		
+		
+	}
+
+	
+}
+
+class myThread implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
