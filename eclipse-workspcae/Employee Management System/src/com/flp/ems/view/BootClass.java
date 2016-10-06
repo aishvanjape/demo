@@ -38,6 +38,7 @@ public class BootClass {
 					userinteraction.getAllEmployee();
 					break;
 				default:
+					System.out.println("Invalid Choice");
 					break;
 			
 			}

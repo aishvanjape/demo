@@ -1,10 +1,12 @@
 package com.flp.ems.service;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.ArrayList;
 
+import com.flp.ems.dao.EmployeeDaoImplForDB;
 import com.flp.ems.dao.EmployeeDaoImplForList;
 import com.flp.ems.dao.IEmployeeDao;
 import com.flp.ems.domain.Employee;
@@ -14,9 +16,9 @@ public class EmployeeServiceImpl implements IEmployeeService{
 
 	private IEmployeeDao dao_interface;
 	
-	public EmployeeServiceImpl() {
+	public EmployeeServiceImpl() throws IOException {
 		
-		dao_interface = new EmployeeDaoImplForList();
+		dao_interface = new EmployeeDaoImplForDB();
 	}
 	
 	@Override
@@ -76,6 +78,49 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		return "Employee Not Found!!Unable to modify";	
 		}
 		else{
+			if(hashobject.get("Phone_No") != null) 
+			{
+				receivedemployee.setPhone_no(Long.parseLong(hashobject.get("Phone_No")));
+			}
+			if(hashobject.get("Date_Of_Birth") != null) 
+			{
+				try {
+					receivedemployee.setDate_Of_Birth(Validate.validate_Date(hashobject.get("Date_Of_Birth")));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(hashobject.get("Date_Of_Joining") != null) 
+			{
+				try {
+					receivedemployee.setDate_Of_Joining(Validate.validate_Date(hashobject.get("Date_Of_Joining")));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if(hashobject.get("Address") != null) 
+			{
+				receivedemployee.setAddress(hashobject.get("Address"));
+			}
+			
+			if(hashobject.get("Department_Id") != null) 
+			{
+				receivedemployee.setDepartment_Id(Long.parseLong(hashobject.get("Department_Id")));
+			}
+			if(hashobject.get("Project_Id") != null) 
+			{
+				receivedemployee.setProject_Id(Long.parseLong(hashobject.get("Project_Id")));
+			}
+			if(hashobject.get("Role_Id") != null) 
+			{
+				receivedemployee.setRole_Id(Long.parseLong(hashobject.get("Role_Id")));
+			}
+			
+			
+			
+			
 			if(dao_interface.ModifyEmployee(receivedemployee))
 			{
 				return "Employee Modified successfully";
@@ -83,9 +128,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 			else{
 				return "Error in modifying";
 			}
-		}
-		
-		
+		}		
 	}
 
 	@Override
@@ -112,13 +155,13 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	public String SearchEmployee(HashMap<String, String> hashobject) {
 		Employee receivedemployee;
 		receivedemployee = dao_interface.SearchEmployee(hashobject);
-		if(receivedemployee == null)
+		if(receivedemployee != null)
 		{
-			return "Employee Not Found";
+			return ("Employee Found !!"+receivedemployee.toString());
 		}
 		else
 		{
-			return ("Employee Found !!"+receivedemployee.toString());
+			return null;
 		}
 	}
 
@@ -129,8 +172,8 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		receivedlist = dao_interface.getAllEmployee();
 		for(Employee employee:receivedlist){
 			String temp;
-			temp = "\nName :"+employee.getName()+"\nKin Id :"+employee.getKin_Id()+"\nEmail Id :"+employee.getEmail_Id()+"\nRole Id :"+employee.getRole_Id()+"\nProject Id :"+employee.getProject_Id()+"\nDepartment Id :"+employee.getDepartment_Id();
-			stringlist.add(temp);
+			temp = "\nName :"+employee.getName()+"\nKin Id :"+employee.getKin_Id()+"\nEmail Id :"+employee.getEmail_Id()+"\nRole Id :"+employee.getRole_Id()+"\nProject Id :"+employee.getProject_Id()+"\nDepartment Id :"+employee.getDepartment_Id()+"\nPhone NO:"+employee.getPhone_no();
+			stringlist.add(employee.toString());
 		}
 		return stringlist;
 	}

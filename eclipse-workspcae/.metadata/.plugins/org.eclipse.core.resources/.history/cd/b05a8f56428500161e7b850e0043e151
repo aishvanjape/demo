@@ -1,8 +1,0 @@
-package com.bank;
-
-public class Account {
-
-	Customer c;
-	int id;
-	double balance;
-}

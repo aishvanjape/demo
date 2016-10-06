@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form </title>
+</head>
+<body>
+Name  <input type ="text"><br> 
+Age  <input type = "text"><br>
+Gender <input type = "radio" value = male checked>Male
+<input type = "radio" value = female>Female <br>
+Address<br>
+</body>
+</html>

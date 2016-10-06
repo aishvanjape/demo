@@ -1,0 +1,11 @@
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/test
+jdbc.query.insert=insert into EMPLOYEE values(?,?,?,?,?,?,?,?,?,?)
+jdbc.query.select=select * from EMPLOYEE;
+jdbc.query.search.on.kinid=select * from EMPLOYEE where kin_id=?
+jdbc.query.search.on.name=select * from EMPLOYEE where name=?
+jdbc.query.search.on.emailid=select * from EMPLOYEE where email_id=?
+jdbc.query.search.on.kin.name=select * from EMPLOYEE where kin_id=? and name=?
+jdbc.query.search.on.name.emailid=select * from EMPLOYEE where name=? and email_id=?
+jdbc.query.search.on.kin.emailid=select * from EMPLOYEE where kin_id=? and email_id=?
+jdbc.query.search.on.all=select * from EMPLOYEE where kin_id=? and name=? and email_id=?

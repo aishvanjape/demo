@@ -1,0 +1,12 @@
+class Z extends Thread{
+	private int i;
+	public void run()
+	{
+		i=1;
+	}
+	public static void main(String[] args) {
+		Z b = new Z();
+		b.run();
+		System.out.println(b.i);
+	}
+}

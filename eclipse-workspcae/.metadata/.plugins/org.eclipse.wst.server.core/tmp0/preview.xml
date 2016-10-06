@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="demo-static-website" name="demo-static-website" path="D:/dev/demo/eclipse-workspcae/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/demo-static-website" type="static"/>
+</server>

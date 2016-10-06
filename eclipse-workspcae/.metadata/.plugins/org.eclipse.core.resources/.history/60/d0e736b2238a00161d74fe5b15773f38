@@ -1,0 +1,6 @@
+class B{
+	public void B(String s){
+		msg = s;
+	}
+	String msg;
+}
