@@ -124,8 +124,10 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context cookie="false" docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\demo-dynamic-website" path="/myFirstApp" reloadable="true" source="org.eclipse.jst.jee.server:demo-dynamic-website">
-</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Lab_1.0" path="/Lab_1.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_1.0"/></Host>
+      <Context cookie="false" docBase="demo-dynamic-website" path="/myFirstApp" reloadable="true" source="org.eclipse.jst.jee.server:demo-dynamic-website">
+</Context><Context docBase="Lab_1.0" path="/Lab_1.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_1.0"/><Context cookies="false" docBase="Demo-DynamicWebApp-2" path="/myFirstApp" reloadable="true" source="org.eclipse.jst.jee.server:Demo-DynamicWebApp-2">
+
+</Context></Host>
     </Engine>
   </Service>
 </Server>

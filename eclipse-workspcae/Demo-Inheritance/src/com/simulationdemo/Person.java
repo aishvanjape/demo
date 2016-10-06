@@ -19,4 +19,10 @@ public class Person implements Comparable{
 		name = s;
 		age = a;
 	}
+	public String getName() {
+		return name;
+	}
+	public int getAge() {
+		return age;
+	}
 }

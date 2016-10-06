@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Person.java&apos; to &apos;Demo-DynamicWebApp-2/src/com.cg&apos;&#x0D;&#x0A;- Original project: &apos;Demo-Inheritance&apos;&#x0D;&#x0A;- Destination element: &apos;Demo-DynamicWebApp-2/src/com.cg&apos;&#x0D;&#x0A;- Original element: &apos;com.simulationdemo.Person.java&apos;" description="Copy compilation unit" destination="=Demo-DynamicWebApp-2/src&lt;com.cg" element1="/src&lt;com.simulationdemo{Person.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1475752898507" units="1" version="1.0"/>
+</session>

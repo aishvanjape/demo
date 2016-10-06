@@ -6535,3 +6535,93 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
 	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:382)
 	... 31 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-10-06 16:43:36.238
+!MESSAGE Could not auto-share project Demo-DynamicWebApp-2
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'Demo-DynamicWebApp-2'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-10-06 16:43:36.239
+!MESSAGE Provided SVN information does not match that on disk for project 'Demo-DynamicWebApp-2'.
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-10-06 16:49:30.623
+!MESSAGE Could not auto-share project Demo-DynamicWebApp-2
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'Demo-DynamicWebApp-2'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-10-06 16:49:30.623
+!MESSAGE Provided SVN information does not match that on disk for project 'Demo-DynamicWebApp-2'.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 16:53:23.970
+!MESSAGE Could not publish server configuration for Tomcat v8.0 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 16:53:23.970
+!MESSAGE Multiple Contexts have a path of "/myFirstApp".
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 16:53:29.291
+!MESSAGE Could not publish server configuration for Tomcat v8.0 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 16:53:29.291
+!MESSAGE Multiple Contexts have a path of "/myFirstApp".
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 16:53:30.237
+!MESSAGE Could not publish server configuration for Tomcat v8.0 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 16:53:30.237
+!MESSAGE Multiple Contexts have a path of "/myFirstApp".
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-10-06 16:55:30.309
+!MESSAGE Could not auto-share project Demo-Inheritance-2
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'Demo-Inheritance-2'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-10-06 16:55:30.309
+!MESSAGE Provided SVN information does not match that on disk for project 'Demo-Inheritance-2'.
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-10-06 16:58:26.546
+!MESSAGE Could not auto-share project Demo-DynamicWebApp-2
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'Demo-DynamicWebApp-2'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-10-06 16:58:26.547
+!MESSAGE Provided SVN information does not match that on disk for project 'Demo-DynamicWebApp-2'.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:00:13.116
+!MESSAGE Could not publish server configuration for Tomcat v8.0 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:00:13.116
+!MESSAGE Multiple Contexts have a path of "/myFirstApp".
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-10-06 17:02:32.328
+!MESSAGE Could not auto-share project Demo-Inheritance-2
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'Demo-Inheritance-2'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-10-06 17:02:32.329
+!MESSAGE Provided SVN information does not match that on disk for project 'Demo-Inheritance-2'.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:36:19.566
+!MESSAGE Could not publish server configuration for Tomcat v8.0 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:36:19.566
+!MESSAGE Multiple Contexts have a path of "/myFirstApp".
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:36:37.467
+!MESSAGE Could not publish server configuration for Tomcat v8.0 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:36:37.467
+!MESSAGE Multiple Contexts have a path of "/myFirstApp".
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:36:45.186
+!MESSAGE Could not publish server configuration for Tomcat v8.0 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2016-10-06 17:36:45.186
+!MESSAGE Multiple Contexts have a path of "/myFirstApp".

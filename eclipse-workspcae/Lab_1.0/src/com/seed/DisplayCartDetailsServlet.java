@@ -33,14 +33,17 @@ public class DisplayCartDetailsServlet extends HttpServlet{
 			String[] arr;
 			out.println("<tr>");
 			String p = list.nextElement();
-			arr = req.getParameterValues(p);
-			for(String a:arr)
+			if(p.equals("bookName"))
 			{
-				out.println("<td>");
-				out.println(a);
-				out.println("</td>");
+				arr = req.getParameterValues(p);
+				for(String a:arr)
+				{
+					out.println("<td>");
+					out.println(a);
+					out.println("</td>");
+				}
+				out.println("</tr>");
 			}
-			out.println("</tr>");
 		}
 		
 		out.println("</table>");
