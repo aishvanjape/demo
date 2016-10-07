@@ -18,9 +18,9 @@ public class SessionServlet extends HttpServlet{
 		HttpSession session = req.getSession();
 		//System.out.println(session.getId());
 		
-		resp.encodeRedirectURL("getDate");
+		String encodeurl = resp.encodeURL("getDate");
 		
-		resp.sendRedirect("getDate");
+		resp.sendRedirect(encodeurl);
 		
 		
 	}

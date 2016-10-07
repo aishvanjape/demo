@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 //	TODO:1 Make DisplayCartDetailsServlet as a HttpServlet
-@WebServlet({"/displayDetails","/"})
+@WebServlet("/displayDetails")
 public class DisplayCartDetailsServlet extends HttpServlet{
 
 //	TODO:2 	Provide call-back method (called by web container) for HTTP request made using HTTP GET method
