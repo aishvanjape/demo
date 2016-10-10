@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="demo-dynamic-website" path="/myFirstApp" reloadable="true" source="org.eclipse.jst.jee.server:demo-dynamic-website"/><Context docBase="Lab_1.0" path="/Lab_1.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_1.0"/><Context docBase="Lab_3.0" path="/Lab_3.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_3.0"/><Context docBase="Demo-DS" path="/anotherApp" reloadable="true" source="org.eclipse.jst.jee.server:Demo-DS"/></Host>
+      <Context docBase="demo-dynamic-website" path="/myFirstApp" reloadable="true" source="org.eclipse.jst.jee.server:demo-dynamic-website"/><Context docBase="Lab_1.0" path="/Lab_1.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_1.0"/><Context docBase="Demo-DS" path="/anotherApp" reloadable="true" source="org.eclipse.jst.jee.server:Demo-DS"/><Context docBase="Lab_3.0" path="/Lab_3.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_3.0"/><Context docBase="DEMO_header_jsp" path="/DEMO_header_jsp" reloadable="true" source="org.eclipse.jst.jee.server:DEMO_header_jsp"/><Context docBase="Demo-JSP-2" path="/Demo-JSP-2" reloadable="true" source="org.eclipse.jst.jee.server:Demo-JSP-2"/><Context docBase="Lab_6.0" path="/Lab_6.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_6.0"/></Host>
     </Engine>
   </Service>
 </Server>

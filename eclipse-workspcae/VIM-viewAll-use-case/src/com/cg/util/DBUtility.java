@@ -22,7 +22,7 @@ public class DBUtility {
 	 */
 	 //TODO 3 Implement a method getCarDAO which returns dao created in TODO 1
 		
-		public CarDAO getCarDAO()
+		public static CarDAO getCarDAO()
 		{
 			return dao;
 		}

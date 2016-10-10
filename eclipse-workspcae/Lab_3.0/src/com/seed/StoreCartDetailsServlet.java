@@ -2,6 +2,7 @@ package com.seed;
 
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,7 +32,7 @@ public class StoreCartDetailsServlet extends HttpServlet{
 //		TODO:2	Retrieve attribute named as "shoppingCart" in session scope
 //		assign it to "cartRef" local variable (you need casting to ShoppingCart) 
 		
-		cartRef = (ShoppingCart) request.getAttribute("shoppingCart");
+		cartRef = (ShoppingCart) hsession.getAttribute("shoppingCart");
 		
 		
 //		TODO:3 If "shoppingCart" does not exist, create object of com.seed.beans.ShoppingCart referenced by "cartRef"
@@ -40,7 +41,7 @@ public class StoreCartDetailsServlet extends HttpServlet{
 		if(cartRef == null)
 		{
 			cartRef = new com.seed.beans.ShoppingCart();
-			request.setAttribute("shoppingCart", cartRef);
+			hsession.setAttribute("shoppingCart", cartRef);
 		}
 		
 //		TODO:4	Read product ids from request parameter named as "bookID"
@@ -54,27 +55,22 @@ public class StoreCartDetailsServlet extends HttpServlet{
 //		TODO:6	if the user clicks "Shop More?" in "bookCatelogue.html", 
 //		then redirect web-client to resource named as "categories.html"
 
-		
-		
-		
-		Enumeration<String> parameterlist = request.getParameterNames();
-		
-			if(parameterlist.nextElement().equals("continue"))
-			{
-				System.out.println("in continue");
-				response.sendRedirect("categories.html");
-			}
-			else 
-			{
-				System.out.println("in chkout");
-				response.sendRedirect("displayDetails");
-			}
-		
-		
-		
+
 //		TODO:7	if the user clicks "Check Out" in "bookCatelogue.html", 
 //		then redirect web-client to resource named as "displayDetails"
-//		Add mapping for resource "displayDetails" in WEB.XML
+//		Add mapping for resource "displayDetails" in WEB.XML		
+		
+		if(request.getParameter("continue")==null)
+		{
+			
+			response.sendRedirect("displayDetails");
+		}
+		else
+		{
+			
+			response.sendRedirect("categories.html");
+		}
+
 		
 		
 
