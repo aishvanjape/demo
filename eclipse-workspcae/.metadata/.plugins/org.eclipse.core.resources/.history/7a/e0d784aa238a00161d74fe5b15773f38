@@ -1,6 +1,0 @@
-class B{
-	public b(String s){
-		msg = s;
-	}
-	String msg;
-}
