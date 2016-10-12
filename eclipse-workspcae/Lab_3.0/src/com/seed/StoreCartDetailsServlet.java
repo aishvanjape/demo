@@ -40,7 +40,7 @@ public class StoreCartDetailsServlet extends HttpServlet{
 		
 		if(cartRef == null)
 		{
-			cartRef = new com.seed.beans.ShoppingCart();
+			cartRef = new ShoppingCart();
 			hsession.setAttribute("shoppingCart", cartRef);
 		}
 		

@@ -37,16 +37,19 @@ public class JDBCCarDAO implements CarDAO{
 		//TODO 5 If any error occur in getting this service then throw ServiceLocatorException
 		//with error message as 'Container Service not available'
 		
-		try{
-			datasource = ServiceLocator.getDataSource("");
-		}catch(Exception e)
-		{
-			throw new ServiceLocatorException("Container Service not available");
-		}
+//		try{
+//			datasource = ServiceLocator.getDataSource("");
+//		}catch(Exception e)
+//		{
+//			throw new ServiceLocatorException("Container Service not available");
+//		}
 	
 		
 	}
 
+	public void setDatasource(DataSource datasource) {
+		this.datasource = datasource;
+	}
 	
 	@Override
 	/**

@@ -15,7 +15,7 @@
 	<%
 	String[] Bookid = request.getParameterValues("bookID");
 	%>
-	<jsp:setProperty name="wishList" property="productList" param="Bookid"/>
+	<jsp:setProperty name="wishList" property="productList" param="bookID"/>
 
 <%-- TODO:3 forward current request to "categories.html" if user clicks on "Add to Wish List & shop more?" button--%>
 

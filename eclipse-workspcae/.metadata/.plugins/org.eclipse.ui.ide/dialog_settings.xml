@@ -3,12 +3,14 @@
 	<section name="ExternalProjectImportWizard">
 		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="D:\dev\docs\mvc-project\eclipse-workspace\VIM-TODOs"/>
 			<item value=""/>
+			<item value="D:\dev\docs\mvc-project\eclipse-workspace\VIM-TODOs"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="\\DIN51001873\dev\demo\demo-jsp-2.zip"/>
+			<item value="D:\Users\training\Downloads\Lab_3.0.zip"/>
 			<item value=""/>
 			<item value="\\DIN51001873\dev\demo\demo-ds.zip"/>
 			<item value="\\DIN51001873\dev\demo\demo-inheritance-2.zip"/>

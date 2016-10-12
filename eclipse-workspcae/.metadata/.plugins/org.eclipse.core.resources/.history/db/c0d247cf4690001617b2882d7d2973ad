@@ -1,0 +1,6 @@
+package com.cg;
+
+public class MyServiceImpl {
+	
+	private IDao daoRef;
+}

@@ -1,8 +1,0 @@
-
-interface MathOperations{
-	int operations(int a,int b);
-}
-
-public class LambdaExpression {
-
-}

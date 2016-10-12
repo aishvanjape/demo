@@ -143,7 +143,12 @@
               
 
 <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/ShoppingAppDataSource" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/ShoppingApp" username="root"/> 
-</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\DEMO_header_jsp" path="/DEMO_header_jsp" reloadable="true" source="org.eclipse.jst.jee.server:DEMO_header_jsp"/><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Demo-JSP-2" path="/Demo-JSP-2" reloadable="true" source="org.eclipse.jst.jee.server:Demo-JSP-2"/><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Lab_6.0" path="/Lab_6.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_6.0"/></Host>
+</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\DEMO_header_jsp" path="/DEMO_header_jsp" reloadable="true" source="org.eclipse.jst.jee.server:DEMO_header_jsp"/><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Demo-JSP-2" path="/Demo-JSP-2" reloadable="true" source="org.eclipse.jst.jee.server:Demo-JSP-2"/><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Lab_6.0" path="/Lab_6.0" reloadable="true" source="org.eclipse.jst.jee.server:Lab_6.0"/><Context cookies="false" docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Demo-Spring-Web" path="/myAppWithSpring" reloadable="true" source="org.eclipse.jst.jee.server:Demo-Spring-Web">
+
+<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/MyDataSource" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test"/>
+              
+              
+</Context></Host>
     </Engine>
   </Service>
 </Server>
