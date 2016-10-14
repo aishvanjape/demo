@@ -17,7 +17,7 @@
 
 	<context:component-scan base-package="com.cg"/>
 	
-	<context:annotation-config/>
+	<!-- <context:annotation-config/> -->
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	
@@ -30,20 +30,5 @@
 		</property>
 		
 	</bean>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
 		
 </beans>

@@ -1,0 +1,4 @@
+
+
+<jee:jndi-lookup id="VIMDataSource" jndi-name="java:/comp/env/jdbc/VIMDataSource"
+		expected-type="javax.sql.DataSource" />

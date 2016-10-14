@@ -18,9 +18,8 @@ public class SessionServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		//System.out.println(session.getId());
-		ServletContext
+	
 		String encodeurl = resp.encodeURL("getDate");
-		
 		resp.sendRedirect(encodeurl);
 		
 		//req.getRequestDispatcher("getDate").include(req, resp);

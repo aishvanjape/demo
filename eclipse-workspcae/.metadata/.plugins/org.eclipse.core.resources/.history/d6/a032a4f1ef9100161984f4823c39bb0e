@@ -1,0 +1,20 @@
+package com.dao;
+
+import java.util.ArrayList;
+
+import com.cg.UserDTO;
+
+public class DaoImpl {
+
+	
+	private ArrayList<UserDTO> userlist = new ArrayList<UserDTO>();
+	
+	public ArrayList<UserDTO> getUserlist() {
+		return userlist;
+	}
+	
+	public void setUserlist(ArrayList<UserDTO> userlist) {
+		this.userlist = userlist;
+	}
+	
+}

@@ -1,0 +1,24 @@
+package com.dao;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Repository;
+
+import com.cg.UserDTO;
+
+
+@Repository
+public class DaoImpl implements IDao{
+
+	
+	private ArrayList<UserDTO> userlist = new ArrayList<UserDTO>();
+	
+	public ArrayList<UserDTO> getUserlist() {
+		return userlist;
+	}
+	
+	public void setUserlist(UserDTO user) {
+		this.userlist.add(user);
+	}
+	
+}

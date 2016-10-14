@@ -1,0 +1,39 @@
+package com.cg;
+
+import java.util.ArrayList;
+
+import javax.sql.DataSource;
+
+import org.springframework.stereotype.Repository;
+
+import com.cg.UserDTO;
+import com.cg.util.ServiceLocator;
+
+
+@Repository
+public class DaoImpl implements IDao{
+
+	
+	private ArrayList<UserDTO> userlist = new ArrayList<UserDTO>();
+	DataSource datasource;
+	
+	public DaoImpl() {
+		datasource = ServiceLocator.getDataSource("VIMDataSource");
+	}
+	
+	
+	
+	public ArrayList<UserDTO> getUserlist() {
+		return userlist;
+	}
+	
+	public void setUserlist(UserDTO user) {
+		this.userlist.add(user);
+		for(UserDTO u:userlist)
+		{
+			System.out.println(u.getEmail());
+			System.out.println(u.getUsername());
+		}
+	}
+	
+}

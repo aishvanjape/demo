@@ -11,8 +11,11 @@
 <h1>
 
 		<%-- <%=??%> --%>
-		
+		<%--this line prints messsage in page scope --%>
 		${message}
+		
+		${requestScope.message}
+		${sessionScope.message}
 		
 		
 		

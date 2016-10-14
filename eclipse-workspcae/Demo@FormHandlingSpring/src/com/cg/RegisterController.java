@@ -3,17 +3,21 @@ package com.cg;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
- 
- 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+
  
 @Controller
 @RequestMapping(value = "/register")
 public class RegisterController {
 
+	@Autowired
+	private IDao daoref;
 	private UserDTO dtoRef;
 	
 	{
@@ -46,7 +50,7 @@ public class RegisterController {
     public String processRegistration(@ModelAttribute("userForm") UserDTO UserDTO) {
     	System.out.println("inside POST");
         // implement your own registration logic here...
-         
+        
         // for testing purpose:
     	
     	System.out.println(UserDTO.getClass());
@@ -57,9 +61,17 @@ public class RegisterController {
         System.out.println("birth date: " + UserDTO.getBirthDate());
         System.out.println("profession: " + UserDTO.getProfession());
          
+        daoref.setUserlist(UserDTO);
+        
 //        return "redirect:/WEB-INF/pages/success.jsp";
         return "success";
     }
+    
+//    public void setUserlist(IDao daoreference)
+//    {
+//    	daoref = daoreference;
+//    }
+    
     
     @ModelAttribute("userForm")
     UserDTO createUser(){
