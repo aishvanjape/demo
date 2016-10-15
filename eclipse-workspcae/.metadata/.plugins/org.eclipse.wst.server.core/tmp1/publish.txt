@@ -1,3 +1,5 @@
 #Tomcat publish data
-#Fri Oct 14 16:50:55 IST 2016
+#Sat Oct 15 16:43:47 IST 2016
 org.eclipse.jst.jee.server\:/binary\:D\:\\dev\\demo\\eclipse-workspcae\\Demo@SpringMVC\\lib\\spring-web-3.2.9.RELEASE.jar=WEB-INF/lib/spring-web-3.2.9.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:D\:\\dev\\demo\\eclipse-workspcae\\VIM-Spring-JDBC-Template\\libsUpdated\\spring-web-3.2.8.RELEASE.jar=WEB-INF/lib/spring-web-3.2.8.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:D\:\\dev\\demo\\eclipse-workspcae\\Dependencies\\lib\\spring-web-3.2.9.RELEASE.jar=WEB-INF/lib/spring-web-3.2.9.RELEASE.jar

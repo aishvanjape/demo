@@ -38,7 +38,13 @@ public class ControllerServlet extends HttpServlet{
 	
 	protected void processrequest(HttpServletRequest req,HttpServletResponse resp) throws IOException
 	{
-		IEmployeeService employeeservice = new EmployeeServiceImpl();
+		IEmployeeService employeeservice=null;
+		try {
+			employeeservice = new EmployeeServiceImpl();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		String actionName = req.getParameter( ACTION );
 		String destinationPage = null;

@@ -9,7 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+  <!-- optional thing to state from which file to read and create beans -->
+  <!-- if not provided searches default applicationContext.xml -->
+  <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
   <servlet>
   	<servlet-name>mvc-dispatcher</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -21,6 +26,9 @@
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
   
-  
+  <listener>
+  <!--by default searches applicationContext.xml -->
+  <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
   
 </web-app>

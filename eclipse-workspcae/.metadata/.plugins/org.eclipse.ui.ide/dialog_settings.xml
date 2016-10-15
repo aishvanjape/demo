@@ -9,6 +9,7 @@
 			<item value="D:\dev\docs\mvc-project\eclipse-workspace\VIM-TODOs"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="\\DIN51001873\dev\demo\demo-spring-with-ds.zip"/>
 			<item value="\\DIN51001873\dev\demo\VIM-Spring-JDBC-Template.zip"/>
 			<item value="D:\Users\training\Downloads\EMS_PHASE3.zip"/>
 			<item value="\\DIN51001873\dev\demo\demo-spring-mvc-2.zip"/>
@@ -28,7 +29,6 @@
 			<item value="\\DIN51001873\dev\demo\demo-servlets.zip"/>
 			<item value="\\DIN51001873\dev\demo\demo-streams-io-2.zip"/>
 			<item value="\\DIN51001873\dev\demo\TestSynchronization.zip"/>
-			<item value="\\DIN51001873\dev\demo\demo-collections-2.zip"/>
 		</list>
 	</section>
 	<section name="ResourceNavigator">

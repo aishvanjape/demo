@@ -27,7 +27,9 @@ public class CustomerServiceImpl implements CustomerService {
 		System.out.println("We are using constructor injection");
 		this.customerRepository = customerRepository;
 	}
-	
+	//for by type and constructor based autowiring
+	//only one bean required
+	//annotations prefered over xml
 //	@Required
 	@Autowired
 	public void setCustomerRepository(CustomerRepository customerRepository) {

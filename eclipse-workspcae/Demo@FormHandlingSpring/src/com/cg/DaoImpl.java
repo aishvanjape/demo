@@ -1,10 +1,20 @@
 package com.cg;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.servlet.ServletConfig;
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.event.ApplicationContextEvent;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.cg.UserDTO;
 import com.cg.util.ServiceLocator;
@@ -14,28 +24,47 @@ import com.cg.util.ServiceLocator;
 public class DaoImpl implements IDao{
 
 	
-	private ArrayList<UserDTO> userlist = new ArrayList<UserDTO>();
+	//private ArrayList<UserDTO> userlist = new ArrayList<UserDTO>();
+	@Autowired
+	private ApplicationContext appcontext;
 	DataSource datasource;
 	
 	public DaoImpl() {
-		datasource = ServiceLocator.getDataSource("VIMDataSource");
+//		ApplicationContext appContext2 = new FileSystemXmlApplicationContext("WEB-INF/applicationContext.xml");
+//		datasource = (DataSource) appContext2.getBean("VIMDataSource");
+	//	ApplicationContext appcontext = WebApplicationContextUtils.getRequiredWebApplicationContext(null);
+		datasource = (DataSource) appcontext.getBean("VIMDataSource");
+		
 	}
 	
-	public void setDatasource(DataSource datasource) {
-		this.datasource = datasource;
-	}
+//	public void setDatasource(DataSource datasource) {
+//		this.datasource = datasource;
+//	}
 	
 	public ArrayList<UserDTO> getUserlist() {
-		return userlist;
+		return null;
 	}
 	
 	public void setUserlist(UserDTO user) {
-		this.userlist.add(user);
-		for(UserDTO u:userlist)
-		{
-			System.out.println(u.getEmail());
-			System.out.println(u.getUsername());
+//		this.userlist.add(user);
+//		for(UserDTO u:userlist)
+//		{
+//			System.out.println(u.getEmail());
+//			System.out.println(u.getUsername());
+//		}
+		
+		try {
+			Connection connection = datasource.getConnection();
+			String insertquery = "insert into Users values ("+user.getUsername()+")";
+			Statement stmt = connection.createStatement();
+			stmt.executeQuery(insertquery);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
 	}
+
+	
 	
 }

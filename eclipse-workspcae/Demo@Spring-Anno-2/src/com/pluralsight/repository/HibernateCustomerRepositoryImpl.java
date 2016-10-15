@@ -6,7 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.pluralsight.model.Customer;
-
+//use @Qualifier to search if more than one implementation is 
+//present to search implementation by name
 @Repository("customerRepository")
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 

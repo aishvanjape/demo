@@ -31,6 +31,9 @@ public class SimpleDSServlet extends HttpServlet{
 					ServletContext application = getServletConfig().getServletContext();
 					
 					application.setAttribute("myDS", ds);
+					// if contextlistener used and above code is present in listener 
+					// use below code
+					//DataSource ds = getServletConfig().getServletContext().getAttribute("myDs");
 				}
 				
 				
@@ -41,13 +44,3 @@ public class SimpleDSServlet extends HttpServlet{
 			
 	}
 }
-
-
-
-
-
-
-
-
-
-
