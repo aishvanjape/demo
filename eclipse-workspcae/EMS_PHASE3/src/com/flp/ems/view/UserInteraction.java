@@ -17,9 +17,6 @@ public class UserInteraction {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 	
@@ -57,7 +54,7 @@ public class UserInteraction {
 		hashobject.put("Role_Id", role_id);
 		
 		
-		employeeservice.AddEmployee(hashobject);
+		System.out.println(employeeservice.AddEmployee(hashobject));
 	}
 	
 	void ModifyEmployee()
@@ -65,7 +62,7 @@ public class UserInteraction {
 		Scanner scanner = new Scanner(System.in);
 		String name,kin_id,email_id,phone_no,date_of_birth,date_of_joining;
 		String address,department_id,project_id,role_id;
-		String receivedstring;
+		String receivedstring[];
 		int choice,ch,option;
 		
 		HashMap<String, String> hashobject = new HashMap<String,String>();
@@ -180,7 +177,7 @@ public class UserInteraction {
 	void RemoveEmployee()
 	{
 		Scanner scanner = new Scanner(System.in);
-		String name,kin_id,receivedstring;
+		String name,kin_id,receivedstring[];
 		int choice,ch;
 		HashMap<String, String> hashobject = new HashMap<String,String>();
 		
@@ -243,7 +240,7 @@ public class UserInteraction {
 	void SearchEmployee()
 	{
 		Scanner scanner = new Scanner(System.in);
-		String name,kin_id,email_id,receivedstring;
+		String name,kin_id,email_id,receivedstring[];
 		HashMap<String, String> hashobject = new HashMap<String,String>();
 		
 		System.out.println("\nEnter field for searching");
@@ -361,10 +358,10 @@ public class UserInteraction {
 	
 	void getAllEmployee()
 	{
-		ArrayList<String> receivedlist;
+		ArrayList<String[]> receivedlist;
 		receivedlist = employeeservice.getAllEmployee();
 		
-		for(String displaystring:receivedlist)
+		for(String[] displaystring:receivedlist)
 		{
 			System.out.println(displaystring);
 		}

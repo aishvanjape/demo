@@ -10,19 +10,20 @@ import com.flp.ems.dao.EmployeeDaoImplForDB;
 import com.flp.ems.dao.EmployeeDaoImplForList;
 import com.flp.ems.dao.IEmployeeDao;
 import com.flp.ems.domain.Employee;
+import com.flp.ems.util.DBUtility;
 import com.flp.ems.util.Validate;
 
 public class EmployeeServiceImpl implements IEmployeeService{
 
 	private IEmployeeDao dao_interface;
 	
-	public EmployeeServiceImpl() throws IOException, ClassNotFoundException {
+	public EmployeeServiceImpl() throws IOException {
 		
-		dao_interface = new EmployeeDaoImplForDB();
+		dao_interface = DBUtility.getEmployeedao();
 	}
 	
 	@Override
-	public void AddEmployee(HashMap<String, String> hashobject) {
+	public String AddEmployee(HashMap<String, String> hashobject) {
 		
 		String name, address;
 		long phone_no,department_id,project_id,role_id;
@@ -51,17 +52,11 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		System.out.println("Before dao");
 		
 		employeelist = dao_interface.getAllEmployee();
-		System.out.println("after getallemployee");
 		HashMap<Employee,Object> employeelistmap = new HashMap<Employee,Object>();
-		System.out.println("before for");
-		if(employeelist!=null)
+		for(Employee emp:employeelist)
 		{
-			for(Employee emp:employeelist)
-			{
-				employeelistmap.put(emp, null);
-			}
+			employeelistmap.put(emp, null);
 		}
-		
 	
 		
 		Employee employee = new Employee(name, phone_no, date_of_birth, date_of_joining, address, department_id, project_id, role_id);
@@ -69,10 +64,12 @@ public class EmployeeServiceImpl implements IEmployeeService{
 		if(employeelistmap.containsKey(employee))
 		{
 			//throw exception
+			return "Error in adding";
 		}
 		else
 		{
 			dao_interface.AddEmployee(employee);
+			return "Employee Added Successsfully";
 		}
 		
 		
@@ -161,12 +158,12 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 
 	@Override
-	public String SearchEmployee(HashMap<String, String> hashobject) {
+	public String[] SearchEmployee(HashMap<String, String> hashobject) {
 		Employee receivedemployee;
 		receivedemployee = dao_interface.SearchEmployee(hashobject);
 		if(receivedemployee != null)
 		{
-			return ("Employee Found !!"+receivedemployee.toString());
+			return (receivedemployee.EmptoString());
 		}
 		else
 		{
@@ -175,14 +172,12 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	}
 
 	@Override
-	public ArrayList<String> getAllEmployee() {
-		ArrayList<String> stringlist = new ArrayList<String>();
+	public ArrayList<String[]> getAllEmployee() {
+		ArrayList<String[]> stringlist = new ArrayList<String[]>();
 		ArrayList<Employee> receivedlist;
 		receivedlist = dao_interface.getAllEmployee();
 		for(Employee employee:receivedlist){
-			String temp;
-			temp = "\nName :"+employee.getName()+"\nKin Id :"+employee.getKin_Id()+"\nEmail Id :"+employee.getEmail_Id()+"\nRole Id :"+employee.getRole_Id()+"\nProject Id :"+employee.getProject_Id()+"\nDepartment Id :"+employee.getDepartment_Id()+"\nPhone NO:"+employee.getPhone_no();
-			stringlist.add(employee.toString());
+			stringlist.add(employee.EmptoString());
 		}
 		return stringlist;
 	}

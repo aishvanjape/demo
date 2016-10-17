@@ -1,8 +1,10 @@
 package com.flp.ems;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
 import javax.servlet.http.HttpServlet;
@@ -38,23 +40,17 @@ public class ControllerServlet extends HttpServlet{
 	
 	protected void processrequest(HttpServletRequest req,HttpServletResponse resp) throws IOException
 	{
-		IEmployeeService employeeservice=null;
-		try {
-			employeeservice = new EmployeeServiceImpl();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		IEmployeeService employeeservice = new EmployeeServiceImpl();
 		
 		String actionName = req.getParameter( ACTION );
 		String destinationPage = null;
 		
 		if(ACTION_ADD.equals(actionName))
 		{
-			String name,kin_id,email_id,phone_no,date_of_birth,date_of_joining;
+			String name,phone_no,date_of_birth,date_of_joining;
 			String address,department_id,project_id,role_id;
 			HashMap<String, String> hashobject = new HashMap<String,String>();
-			
+			destinationPage = "display.jsp";
 	
 			name = req.getParameter("name");
 			hashobject.put("Name", name);
@@ -74,9 +70,80 @@ public class ControllerServlet extends HttpServlet{
 			hashobject.put("Role_Id", role_id);
 			
 			
-			employeeservice.AddEmployee(hashobject);
+			req.setAttribute("message", employeeservice.AddEmployee(hashobject));
+			RequestDispatcher dispatcher = req.getRequestDispatcher(destinationPage);
+			try {
+				dispatcher.forward(req, resp);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
+		
+		if(ACTION_VIEW.equals(actionName))
+		{
+			destinationPage = "display.jsp";
+			ArrayList<String[]> receivedlist;
+			receivedlist = employeeservice.getAllEmployee();
+			
+			req.setAttribute("message", "EMPLOYEES");
+			req.setAttribute("employees", receivedlist);
+			RequestDispatcher dispatcher = req.getRequestDispatcher(destinationPage);
+			try {
+				dispatcher.forward(req, resp);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		if(ACTION_SEARCH.equals(actionName))
+		{
+			destinationPage = "display.jsp";
+			HashMap<String, String> hashobject = new HashMap<String,String>();
+			String name,kin_id,email_id,receivedstring[];
+			ArrayList<String[]> receivedlist =  new ArrayList<String[]>();
+			hashobject.put("Name", "NA");
+			hashobject.put("Kin_Id", "NA");
+			hashobject.put("Email_Id", "NA");
+			
+			name = req.getParameter("name");
+			kin_id = req.getParameter("kinId");
+			email_id = req.getParameter("emailId");
+			if(!name.isEmpty())
+			{
+				hashobject.put("Name", name);
+			}
+			if(!kin_id.isEmpty())
+			{
+				hashobject.put("Kin_Id", kin_id);
+			}
+			if(!email_id.isEmpty())
+			{
+				hashobject.put("Email_Id", email_id);
+			}
+			
+			receivedstring = employeeservice.SearchEmployee(hashobject);
+			if(receivedstring == null)
+			{
+				req.setAttribute("message", "Employee Not Found");
+			}
+			else 
+			{
+				receivedlist.add(receivedstring);
+				req.setAttribute("message", "Employee Found!!");
+				req.setAttribute("employees", receivedlist);
+			}
+			RequestDispatcher dispatcher = req.getRequestDispatcher(destinationPage);
+			try {
+				dispatcher.forward(req, resp);
+			} catch (ServletException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 		
 	}
 	

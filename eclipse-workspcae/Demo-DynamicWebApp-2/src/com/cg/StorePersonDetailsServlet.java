@@ -19,7 +19,7 @@ public class StorePersonDetailsServlet extends HttpServlet{
 			String user = request.getParameter("name");
 			String age = request.getParameter("age");
 	
-			Person p1 = new Person(user, Integer.parseInt(age));
+			Person p1 = new Person();
 			
 			request.setAttribute("pd", p1);
 			

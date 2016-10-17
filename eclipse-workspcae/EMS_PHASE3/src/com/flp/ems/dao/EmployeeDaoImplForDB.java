@@ -16,25 +16,31 @@ import java.util.HashMap;
 import java.util.Properties;
 
 import com.flp.ems.domain.Employee;
+import com.flp.ems.util.ServiceLocator;
 
 
 public class EmployeeDaoImplForDB implements IEmployeeDao{
 	
 		private Properties props;
-		private FileInputStream fln;
+		//private FileInputStream fln;
 		private String url;
-	public EmployeeDaoImplForDB() throws IOException, ClassNotFoundException
+	public EmployeeDaoImplForDB() 
 	{
 		
-		props = new Properties();
-//		fln = new FileInputStream("dbDetails.properties");
-//		props.load(fln);
-//		url = props.getProperty("jdbc.url");
-		InputStream inputStream = (InputStream) getClass().getClassLoader().getResourceAsStream("/dbDetails.properties");
-		props.load(inputStream);
-		String driver = props.getProperty("jdbc.driver");
-		Class.forName(driver);
-		url = props.getProperty("jdbc.url");
+		try {
+
+			props = new Properties();
+			InputStream inputStream = (InputStream) getClass().getClassLoader().getResourceAsStream("/dbDetails.properties");
+			props.load(inputStream);
+			url = props.getProperty("jdbc.url");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		
 	}
 	
@@ -42,10 +48,10 @@ public class EmployeeDaoImplForDB implements IEmployeeDao{
 
 	@Override
 	public void AddEmployee(Employee newemployee) {
-		Connection dbConnection=null;
+		Connection dbConnection;
 		String insertquery;
 		try {
-			dbConnection=DriverManager.getConnection(url);
+			dbConnection=ServiceLocator.getDataSource("jdbc/MyDataSource").getConnection();
 			insertquery=props.getProperty("jdbc.query.insert");
 			try(PreparedStatement insertstmt = dbConnection.prepareStatement(insertquery))
 			{
@@ -66,27 +72,63 @@ public class EmployeeDaoImplForDB implements IEmployeeDao{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
-		finally{
-			try {
-				dbConnection.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		}		
 	}
 
 	@Override
 	public boolean ModifyEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return false;
+		Connection dbConnection;
+		ResultSet res;
+		try {
+			dbConnection=ServiceLocator.getDataSource("jdbc/MyDataSource").getConnection();
+			try(PreparedStatement updatestmt=dbConnection.prepareStatement(props.getProperty("jdbc.query.search.on.kinid"), ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE))
+			{
+				updatestmt.setString(1, employee.getKin_Id());
+				res = updatestmt.executeQuery();
+				res.first();
+				res.updateString(2, employee.getName());
+				res.updateRow();
+				res.updateString(3, employee.getEmail_Id());
+				res.updateRow();
+				res.updateInt(4, (int)employee.getPhone_no());
+				res.updateRow();
+				res.updateDate(5, new java.sql.Date(employee.getDate_Of_Birth().getTime()));
+				res.updateRow();
+				res.updateDate(6, new java.sql.Date(employee.getDate_Of_Joining().getTime()));
+				res.updateRow();
+				res.updateString(7, employee.getAddress());
+				res.updateRow();
+				res.updateInt(8, (int)employee.getDepartment_Id());
+				res.updateRow();
+				res.updateInt(9, (int)employee.getProject_Id());
+				res.updateRow();
+				res.updateInt(10, (int)employee.getRole_Id());
+				res.updateRow();
+				return true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
 	}
 
 	@Override
 	public boolean RemoveEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return false;
+		Connection dbConnection;
+		try {
+			dbConnection=ServiceLocator.getDataSource("jdbc/MyDataSource").getConnection();
+			try(PreparedStatement removestmt=dbConnection.prepareStatement(props.getProperty("jdbc.query.delete")))
+			{
+				removestmt.setString(1, employee.getKin_Id());
+				removestmt.executeUpdate();
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
@@ -104,8 +146,7 @@ public class EmployeeDaoImplForDB implements IEmployeeDao{
 		key_email = hashfield.get("Email_Id");
 
 		try {
-			dbConnection=DriverManager.getConnection(url,"root","root123");
-			
+			dbConnection=ServiceLocator.getDataSource("jdbc/MyDataSource").getConnection();
 			if(key_name.equals("NA") && !key_kin.equals("NA") && !key_email.equals("NA"))
 			{
 				try(PreparedStatement searchstmt = dbConnection.prepareStatement(props.getProperty("jdbc.query.search.on.kin.emailid")))
@@ -213,10 +254,11 @@ public class EmployeeDaoImplForDB implements IEmployeeDao{
 			}
 			else if(!key_email.equals("NA") && !key_name.equals("NA") && !key_kin.equals("NA"))
 			{
-				try(PreparedStatement searchstmt = dbConnection.prepareStatement(props.getProperty("jdbc.query.search.on.name.emailid")))
+				try(PreparedStatement searchstmt = dbConnection.prepareStatement(props.getProperty("jdbc.query.search.on.all")))
 				{
-					searchstmt.setString(1, key_name);
-					searchstmt.setString(2, key_email);
+					searchstmt.setString(2, key_name);
+					searchstmt.setString(3,key_email);
+					searchstmt.setString(1, key_kin);
 					res = searchstmt.executeQuery();
 					if(res.next())
 					{
@@ -238,28 +280,23 @@ public class EmployeeDaoImplForDB implements IEmployeeDao{
 	@Override
 	public ArrayList getAllEmployee()  {
 		Connection dbConnection;
-		ArrayList<Employee> employeelist = null;
+		ArrayList<Employee> employeelist = new ArrayList<Employee>();
 		ResultSet result;
 		try {
-			System.out.println("in getall");
-			dbConnection=DriverManager.getConnection(url);
-			System.out.println("after getting connection");
+			dbConnection=ServiceLocator.getDataSource("jdbc/MyDataSource").getConnection();
 			try(Statement selectstmt = dbConnection.createStatement())
 			{
 				String selectquery = props.getProperty("jdbc.query.select");
 				result = selectstmt.executeQuery(selectquery);
-				if(!result.wasNull())
+				
+				while(result.next())
 				{
-					employeelist = new ArrayList<Employee>();
-					while(result.next())
-					{
-						
-						Employee emp = new Employee(result.getString(2),result.getInt(4),result.getDate(5),result.getDate(6),result.getString(7),result.getInt(8),result.getInt(9),result.getInt(10));
-						emp.setKin_Id(result.getString(1));
-						emp.setEmail_Id(result.getString(3));
-					    employeelist.add(emp);
-					    
-					}
+					
+					Employee emp = new Employee(result.getString(2),result.getInt(4),result.getDate(5),result.getDate(6),result.getString(7),result.getInt(8),result.getInt(9),result.getInt(10));
+					emp.setKin_Id(result.getString(1));
+					emp.setEmail_Id(result.getString(3));
+				    employeelist.add(emp);
+				    
 				}
 				return employeelist;
 			}	

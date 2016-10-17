@@ -164,7 +164,10 @@ This resource is for ORACLE DATABASE.
               url="jdbc:oracle:thin:@localhost:1521:XE"/> 
    -->      
                     
-</Context></Host>
+</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\EMS_PHASE3" path="/EMS_PHASE3" reloadable="true" source="org.eclipse.jst.jee.server:EMS_PHASE3">
+<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/MyDataSource" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test"/>
+      
+</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\cxf-ws-demo" path="/cxf-ws-demo" reloadable="true" source="org.eclipse.jst.j2ee.server:cxf-ws-demo"/></Host>
     </Engine>
   </Service>
 </Server>

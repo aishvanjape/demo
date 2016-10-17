@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Demo@FormHandlingSpring" path="/forms" reloadable="true" source="org.eclipse.jst.jee.server:Demo@FormHandlingSpring"/><Context docBase="Demo-Spring-CORE-MVC-DataSource" path="/trySpringWithDS" reloadable="true" source="org.eclipse.jst.jee.server:Demo-Spring-CORE-MVC-DataSource"/><Context docBase="VIM-Spring-JDBC-Template" path="/vimSpringJPA" reloadable="true" source="org.eclipse.jst.jee.server:VIM-Spring-JDBC-Template"/></Host>
+      <Context docBase="Demo@FormHandlingSpring" path="/forms" reloadable="true" source="org.eclipse.jst.jee.server:Demo@FormHandlingSpring"/><Context docBase="Demo-Spring-CORE-MVC-DataSource" path="/trySpringWithDS" reloadable="true" source="org.eclipse.jst.jee.server:Demo-Spring-CORE-MVC-DataSource"/><Context docBase="VIM-Spring-JDBC-Template" path="/vimSpringJPA" reloadable="true" source="org.eclipse.jst.jee.server:VIM-Spring-JDBC-Template"/><Context docBase="EMS_PHASE3" path="/EMS_PHASE3" reloadable="true" source="org.eclipse.jst.jee.server:EMS_PHASE3"/><Context docBase="cxf-ws-demo" path="/cxf-ws-demo" reloadable="true" source="org.eclipse.jst.j2ee.server:cxf-ws-demo"/></Host>
     </Engine>
   </Service>
 </Server>

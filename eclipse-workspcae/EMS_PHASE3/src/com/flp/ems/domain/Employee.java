@@ -157,12 +157,11 @@ public class Employee implements Cloneable{
 	{
 		Email_Id = email_id;
 	}
-	@Override
-	public String toString() {
-		return "\nEmployee :\nName=" + Name + ", \nKin_Id=" + Kin_Id + ", \nEmail_Id=" + Email_Id + ", \nDepartment_Id="
-				+ Department_Id + ", \nProject_Id=" + Project_Id + ", \nRole_Id=" + Role_Id +", \nPhone No:"+Phone_no+", \nDate O Birth:"+Date_Of_Birth;
+	
+	public String[] EmptoString() {
+		String[] employeestring={Name, Kin_Id, Email_Id, String.valueOf(Department_Id), String.valueOf(Project_Id), String.valueOf(Role_Id), String.valueOf(Phone_no), Date_Of_Birth.toString()};
+	return employeestring;
 	}
-
 	@Override
 	public Object clone()  {
 		try {
