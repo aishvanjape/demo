@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8005" shutdown="SHUTDOWN">
+ --><Server port="8006" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" port="8081" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -80,7 +80,7 @@
     -->
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443"/>
+    <Connector port="8010" protocol="AJP/1.3" redirectPort="8443"/>
 
 
     <!-- An Engine represents the entry point (within Catalina) that processes
@@ -124,50 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Demo@FormHandlingSpring" path="/forms" reloadable="true" source="org.eclipse.jst.jee.server:Demo@FormHandlingSpring">
-<!-- this file is for tomcat,for others different things used -->
-<!--configuration of datasource   creation is unknown container's job -->
-<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/VIMDataSource" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test"/>
-</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Demo-Spring-CORE-MVC-DataSource" path="/trySpringWithDS" reloadable="true" source="org.eclipse.jst.jee.server:Demo-Spring-CORE-MVC-DataSource">
-
-	<!--  THIS RESOURCE WILL BE 1. CREATED BY CONTAINER AND 2. BINDED INTO JNDI TREE 
-			WITH NAME "jdbc/myDS"
-	-->
-	<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/myDS" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test"/>
-
-
-</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\VIM-Spring-JDBC-Template" path="/vimSpringJPA" reloadable="true" source="org.eclipse.jst.jee.server:VIM-Spring-JDBC-Template">
-         
-<!-- 
-		Following element defines a reference lookup name to an external resource. 
-		This external resource is type of javax.sql.DataSource.  
-		The configuration of this resource is also done in WEB-INF\web.xml
-		Don't forget to add required jdbc driver(jar) in WEB-INF\lib.  			
--->
-
-<!-- <Context>
-	<ResourceLink global="jdbc/tutorialDS" name="jdbc/tutorialDS" type="javax.sql.DataSource"/>
-</Context>
- -->
-
-<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/VIMDataSource" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test"/>
-              
-<!--
-
-username="root" password="root"
-This resource is for ORACLE DATABASE. 
-<Resource name="jdbc/VIMDataSource" auth="Container"
-              type="javax.sql.DataSource" maxActive="100" 
-              maxIdle="30" maxWait="10000"
-              username="VIM" password="seed123" 
-              driverClassName="oracle.jdbc.driver.OracleDriver"
-              url="jdbc:oracle:thin:@localhost:1521:XE"/> 
-   -->      
-                    
-</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\EMS_PHASE3" path="/EMS_PHASE3" reloadable="true" source="org.eclipse.jst.jee.server:EMS_PHASE3">
-<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/MyDataSource" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test"/>
-      
-</Context><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\cxf-ws-demo" path="/cxf-ws-demo" reloadable="true" source="org.eclipse.jst.j2ee.server:cxf-ws-demo"/></Host>
+      <Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\dev\demo\eclipse-workspcae\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Demo-Rest" path="/Demo-Rest" reloadable="true" source="org.eclipse.jst.jee.server:Demo-Rest"/></Host>
     </Engine>
   </Service>
 </Server>

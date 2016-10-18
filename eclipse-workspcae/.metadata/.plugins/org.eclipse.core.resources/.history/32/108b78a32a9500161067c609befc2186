@@ -1,0 +1,58 @@
+package com.barclays;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedHashMap;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
+
+/**
+ * Root resource (exposed at "myresource" path)
+ */
+@Path("myresource")
+public class MyResource {
+
+    /**
+     * Method handling HTTP GET requests. The returned object will be sent
+     * to the client as "text/plain" media type.
+     *
+     * @return String that will be returned as a text/plain response.
+     */
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getIt() {
+        return "Got it!";
+    }
+    
+    
+    @Path("person")
+    @GET
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    public Person getpersondetails()
+    {
+    	Person p = new Person();
+    	p.setName("ABC");
+    	p.setAge(11);
+		return p;
+    	
+    }
+    
+    @Path("setperson")
+    @POST
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_HTML)
+    public ResponseBuilder setperson(@FormParam("name")String name,@FormParam("age")int age)
+    {
+    	Person p = new Person();
+    	p.setAge(age);
+    	p.setName(name);
+    	return Response.status(200);
+    	//return "NAME:"+p.getName()+"AGE:"+p.getAge();
+    }
+    
+}
